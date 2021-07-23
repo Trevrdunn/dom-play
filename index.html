@@ -1,1 +1,52 @@
-<h1>DOM Play</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Play</title>
+    <style>
+    
+    </style>
+</head>
+    <body>
+        <h1>DOM Play</h1>
+        <div id="play">
+            <p><span data-actor="hamlet">Hamlet: To be or not to be?</span></p>
+            <p><span data-actor="skull">Skull: Are you talking to me?</span></p>
+            <p><span data-actor="hamlet">Hamlet: Did you say something?</span></p>
+            <p><span data-actor="skull">Skull: No, I'm only a skull.</span></p>
+            <p><span data-actor="hamlet">Hamlet: Good! I thought I was going crazy!</span></p>
+            <p><span data-actor="ophelia">Ophelia: Hamlet stop talking to skulls! thats messed up</span></p>
+        </div>
+        <script>
+
+            const spans = document.querySelectorAll('div#play span');
+
+
+            for(const mySpan of spans){
+                mySpan.addEventListener('click',function(ev){
+                    //alert(mySpan.dataset.actor)
+                    highlightActor(mySpan.dataset.actor);
+
+                });
+            }
+
+
+            function highlightActor(myActor){
+
+                for(const mySpan of spans){
+
+                    if(myActor == mySpan.dataset.actor){
+                        mySpan.style.backgroundColor = 'yellow'
+                    }else{
+                        mySpan.style.backgroundColor = 'white'
+                    }
+                }
+
+
+
+            }
+        </script>
+    </body>
+</html>
