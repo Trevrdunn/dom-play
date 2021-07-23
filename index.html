@@ -4,21 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>DOM Play</title>
-    <style>
-    
-    </style>
+
 </head>
     <body>
+        <header>
+        </header>
+        <main>
+         <header><h3>A JavaScript Example by Trevor Dunn</h3></header>
+         <p>This is a web page that uses JavaScript to highlight lines for specific characters in a movie.
+        </p>
+    
+
         <h1>DOM Play</h1>
         <div id="play">
-            <p><span data-actor="hamlet">Hamlet: To be or not to be?</span></p>
-            <p><span data-actor="skull">Skull: Are you talking to me?</span></p>
-            <p><span data-actor="hamlet">Hamlet: Did you say something?</span></p>
-            <p><span data-actor="skull">Skull: No, I'm only a skull.</span></p>
-            <p><span data-actor="hamlet">Hamlet: Good! I thought I was going crazy!</span></p>
-            <p><span data-actor="ophelia">Ophelia: Hamlet stop talking to skulls! thats messed up</span></p>
+            <p><span data-actor="bilbo">Bilbo: "Good Morning!"</span></p>
+            <p class="filler">***And he meant it. The sun was shining, and the grass was very green. But Gandalf looked at him from under long bushy eyebrows that stuck out further than the brim of his shady hat.***</p>
+            <p><span data-actor="gandalf">gandalf: “What do you mean?” “Do you wish me a good morning, or mean that it is a good morning whether I want it or not; or that you feel good this morning; or that it is a morning to be good on?” </span></p>
+            <p><span data-actor="bilbo">bilbo: “All of them at once,” “And a very fine morning for a pipe of tobacco out of doors, into the bargain. If you have a pipe about you, sit down and have a fill of mine! There’s no hurry, we have all the day before us!”</span></p>
+            <p class="filler">***Then Bilbo sat down on a seat by his door, crossed his legs, and blew out a beautiful grey ring of smoke that sailed up into the air without breaking and floated away over The Hill.***</p>
+            <p><span data-actor="gandalf">gandalf: “Very pretty!” “But I have no time to blow smoke-rings this morning. I am looking for someone to share in an adventure that I am arranging, and it’s very difficult to find anyone.”</span></p>
+            <p><span data-actor="biblo">bilbo: “I should think so—in these parts! We are plain quiet folk and have no use for adventures. Nasty disturbing uncomfortable things! Make you late for dinner! I can’t think what anybody sees in them,”</span></p>
+            <P class="filler">****Mr. Baggins stuck one thumb behind his braces, and blew out another even bigger smoke-ring. Then he took out his morning letters, and began to read, pretending to take no more notice of the old man. He had decided that he was not quite his sort, and wanted him to go away. But the old man did not move. He stood leaning on his stick and gazing at the hobbit without saying anything, till Bilbo got quite uncomfortable and even a little cross.***</P>
+            <p><span data-actor="bilbo">bilbo: “Good morning!” “We don’t want any adventures here, thank you! You might try over The Hill or across The Water.”</span></p>
+            <p><span data-actor="gandalf">gandalf: “What a lot of things you do use Good morning for!” “Now you mean that you want to get rid of me, and that it won’t be good till I move off.”</span></p>
         </div>
+
+
+
+
         <script>
 
             const spans = document.querySelectorAll('div#play span');
@@ -37,7 +52,8 @@
 
                 for(const mySpan of spans){
 
-                    if(myActor == mySpan.dataset.actor){
+                    if(myActor == mySpan
+                    .dataset.actor){
                         mySpan.style.backgroundColor = 'yellow'
                     }else{
                         mySpan.style.backgroundColor = 'white'
